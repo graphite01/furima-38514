@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="A7PxyxzYysce3TW779mu" name="ER図">
-        <mxGraphModel dx="701" dy="707" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="759" dy="586" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -103,10 +103,10 @@
                 <mxCell id="75" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" parent="10" vertex="1">
                     <mxGeometry y="176" width="320" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="PkvAiPzzE-PyGOlPrmFp-94" value="purchase_history (references型, NOT NULL, 外部キー)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="10">
+                <mxCell id="PkvAiPzzE-PyGOlPrmFp-94" value="purchase_history (references型, NOT NULL, 外部キー)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="10" vertex="1">
                     <mxGeometry y="186" width="320" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="PkvAiPzzE-PyGOlPrmFp-95" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="10">
+                <mxCell id="PkvAiPzzE-PyGOlPrmFp-95" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" parent="10" vertex="1">
                     <mxGeometry y="216" width="320" height="10" as="geometry"/>
                 </mxCell>
                 <mxCell id="rQZUlIggpN3io1WVQZ91-83" value="※下記はActiv Hash,別ページに詳細記入 " style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="10" vertex="1">
@@ -157,34 +157,34 @@
                 <mxCell id="VDPC6rlVN29aigHJAPRe-89" value="belongs_to : detail_category&#10;belongs_to : detail_situation&#10;belongs_to : delivery_charge&#10;belongs_to : prefecture&#10;belongs_to : days_to_ship" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="VDPC6rlVN29aigHJAPRe-88" vertex="1">
                     <mxGeometry y="30" width="370" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="81" value="purchase_history" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+                <mxCell id="81" value="purchase_history" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="580" y="224" width="340" height="86" as="geometry"/>
                 </mxCell>
-                <mxCell id="88" value="user (references型, NOT NULL,外部キー)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="81">
+                <mxCell id="88" value="user (references型, NOT NULL,外部キー)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="81" vertex="1">
                     <mxGeometry y="26" width="340" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="89" value="commodity_exhibition (references型, NOT NULL,外部キー)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="81">
+                <mxCell id="89" value="commodity_exhibition (references型, NOT NULL,外部キー)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="81" vertex="1">
                     <mxGeometry y="56" width="340" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="PkvAiPzzE-PyGOlPrmFp-97" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;entryX=-0.003;entryY=0.151;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.004;exitY=0.042;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="2" target="81">
+                <mxCell id="PkvAiPzzE-PyGOlPrmFp-97" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;entryX=-0.003;entryY=0.151;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.004;exitY=0.042;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="2" target="81" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="420" y="80" as="sourcePoint"/>
                         <mxPoint x="890" y="310" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="PkvAiPzzE-PyGOlPrmFp-99" value="association" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                <mxCell id="PkvAiPzzE-PyGOlPrmFp-99" value="association" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="580" y="310" width="210" height="90" as="geometry"/>
                 </mxCell>
-                <mxCell id="PkvAiPzzE-PyGOlPrmFp-100" value="belongs_to :user&#10;belongs_to :commodity_exhibition&#10;has_one :product_purchase" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="PkvAiPzzE-PyGOlPrmFp-99">
+                <mxCell id="PkvAiPzzE-PyGOlPrmFp-100" value="belongs_to :user&#10;belongs_to :commodity_exhibition&#10;has_one :product_purchase" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="PkvAiPzzE-PyGOlPrmFp-99" vertex="1">
                     <mxGeometry y="30" width="210" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="PkvAiPzzE-PyGOlPrmFp-104" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;exitX=1.005;exitY=0.133;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="81">
+                <mxCell id="PkvAiPzzE-PyGOlPrmFp-104" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;exitX=1.005;exitY=0.133;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="81" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="910" y="230" as="sourcePoint"/>
                         <mxPoint x="1160" y="305" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="PkvAiPzzE-PyGOlPrmFp-106" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;elbow=vertical;entryX=1.003;entryY=0.035;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.052;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="2" target="6">
+                <mxCell id="PkvAiPzzE-PyGOlPrmFp-106" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;elbow=vertical;entryX=1.003;entryY=0.035;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.052;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="2" target="6" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="120" y="54" as="sourcePoint"/>
                         <mxPoint x="1520" y="55" as="targetPoint"/>
@@ -196,7 +196,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="PkvAiPzzE-PyGOlPrmFp-108" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;elbow=vertical;exitX=-0.004;exitY=0.048;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="10" target="89">
+                <mxCell id="PkvAiPzzE-PyGOlPrmFp-108" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;elbow=vertical;exitX=-0.004;exitY=0.048;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="10" target="89" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="560" y="550" as="sourcePoint"/>
                         <mxPoint x="580" y="100" as="targetPoint"/>
@@ -210,7 +210,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="JcOXDJlkuqWcbEafrIvG" name="Active Hash各モデルとの関係">
-        <mxGraphModel dx="596" dy="601" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+        <mxGraphModel dx="759" dy="586" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="3W_2Ol7ErgmZs0Fbgw95-0"/>
                 <mxCell id="3W_2Ol7ErgmZs0Fbgw95-1" parent="3W_2Ol7ErgmZs0Fbgw95-0"/>
@@ -219,7 +219,7 @@
                         <mxPoint x="195" y="110" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="6NGImo8wnbTER3Nu9GD0-13" style="edgeStyle=none;html=1;entryX=-0.004;entryY=0.038;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="3W_2Ol7ErgmZs0Fbgw95-1" source="xS98_2u3Eo_spGpquLzn-0" target="WzfWvE-vVkQd1vmijaVt-0">
+                <mxCell id="6NGImo8wnbTER3Nu9GD0-13" style="edgeStyle=none;html=1;entryX=-0.004;entryY=0.038;entryDx=0;entryDy=0;entryPerimeter=0;" parent="3W_2Ol7ErgmZs0Fbgw95-1" source="xS98_2u3Eo_spGpquLzn-0" target="WzfWvE-vVkQd1vmijaVt-0" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="660" y="60" as="targetPoint"/>
                         <Array as="points">
@@ -368,10 +368,10 @@
                 <mxCell id="cGdoI4bzIIaq4CQ6CC0d-1" value="attr_accessor :token" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="cGdoI4bzIIaq4CQ6CC0d-0" vertex="1">
                     <mxGeometry y="30" width="210" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="6NGImo8wnbTER3Nu9GD0-10" value="include ActiveHash::Associations" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="3W_2Ol7ErgmZs0Fbgw95-1">
+                <mxCell id="6NGImo8wnbTER3Nu9GD0-10" value="include ActiveHash::Associations" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="3W_2Ol7ErgmZs0Fbgw95-1" vertex="1">
                     <mxGeometry x="850" y="376" width="210" height="74" as="geometry"/>
                 </mxCell>
-                <mxCell id="6NGImo8wnbTER3Nu9GD0-11" value="has_many :commodity_exhibitions&#10;has_many :product_purchases" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="6NGImo8wnbTER3Nu9GD0-10">
+                <mxCell id="6NGImo8wnbTER3Nu9GD0-11" value="has_many :commodity_exhibitions&#10;has_many :product_purchases" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="6NGImo8wnbTER3Nu9GD0-10" vertex="1">
                     <mxGeometry y="30" width="210" height="44" as="geometry"/>
                 </mxCell>
             </root>
