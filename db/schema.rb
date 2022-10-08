@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2022_10_07_080011) do
     t.integer "detail_category_id", null: false
     t.integer "detail_situation_id", null: false
     t.integer "delivery_charge_id", null: false
-    t.integer "prefectures", null: false
-    t.integer "days_to_ship", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "days_to_ship_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_commodity_exhibitions_on_user_id"

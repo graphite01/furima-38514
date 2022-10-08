@@ -5,7 +5,7 @@ class CommodityExhibition < ApplicationRecord
     validates :selling_price
   end
 
-  with_options presence: true, numericality: { other_than: 1 }
+  with_options presence: true, numericality: { other_than: 1 } do
     validates :detail_category_id
     validates :detail_situation_id
     validates :delivery_charge_id
@@ -14,12 +14,13 @@ class CommodityExhibition < ApplicationRecord
   end
 
   belongs_to :user
+  has_one_attached :image
 
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to : detail_category
-  belongs_to : detail_situation
-  belongs_to : delivery_charge
-  belongs_to : prefecture
-  belongs_to : days_to_ship
-
+  extend ActiveHash::Associations::ActiveRecordExtensions do
+    belongs_to :detail_category
+    belongs_to :detail_situation
+    belongs_to :delivery_charge
+    belongs_to :prefecture
+    belongs_to :days_to_ship
+  end
 end

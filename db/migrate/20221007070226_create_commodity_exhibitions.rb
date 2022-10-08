@@ -8,8 +8,8 @@ class CreateCommodityExhibitions < ActiveRecord::Migration[6.0]
       t.integer :detail_category_id, null: false
       t.integer :detail_situation_id, null: false
       t.integer :delivery_charge_id, null: false
-      t.integer :prefectures, null: false
-      t.integer :days_to_ship, null: false
+      t.integer :prefecture_id, null: false
+      t.integer :days_to_ship_id, null: false
       t.timestamps
     end
   end
