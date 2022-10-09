@@ -1,6 +1,8 @@
 class CommodityExhibitionsController < ApplicationController
+  before_aciton :authenticate_user!
+
   def index
-    @commodity_exhibitions = CommodityExhibition.includes(:user)
+    # @commodity_exhibitions = CommodityExhibition.includes(:user)
   end
 
   def new
