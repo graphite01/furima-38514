@@ -26,8 +26,12 @@ class CommodityExhibitionsController < ApplicationController
   end
 
   def update
-    commodity_exhibition = CommodityExhibition.find(params[:id])
-    commodity_exhibition.update(commodity_exhibition_params)
+    @commodity_exhibition = CommodityExhibition.find(params[:id])
+    if @commodity_exhibition.update(commodity_exhibition_params)
+      redirect_to commodity_exhibition_path
+    else
+      render :edit
+    end
   end
 
   private
