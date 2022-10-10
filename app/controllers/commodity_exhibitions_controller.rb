@@ -1,6 +1,6 @@
 class CommodityExhibitionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_commodity, only: [:show, :edit]
+  before_action :set_commodity, only: [:show, :edit, :update]
 
   def index
     @commodity_exhibitions = CommodityExhibition.includes(:user).order('created_at DESC')
@@ -27,7 +27,6 @@ class CommodityExhibitionsController < ApplicationController
   end
 
   def update
-    @commodity_exhibition = CommodityExhibition.find(params[:id])
     if @commodity_exhibition.update(commodity_exhibition_params)
       redirect_to commodity_exhibition_path
     else
