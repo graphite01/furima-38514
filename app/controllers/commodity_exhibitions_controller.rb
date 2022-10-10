@@ -2,7 +2,7 @@ class CommodityExhibitionsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
   def index
-    @commodity_exhibitions = CommodityExhibition.includes(:user).order("created_at DESC")
+    @commodity_exhibitions = CommodityExhibition.includes(:user).order('created_at DESC')
   end
 
   def new

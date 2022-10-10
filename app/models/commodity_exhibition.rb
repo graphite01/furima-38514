@@ -31,5 +31,4 @@ class CommodityExhibition < ApplicationRecord
   def delivery
     deliveryChargeName = DeliveryCharge.find(delivery_charge_id)[:name]
   end
-
 end
