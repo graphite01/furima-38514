@@ -130,7 +130,7 @@
 
       <% @commodity_exhibitions.each do |commodity| %>
         <li class='list'>
-          <%= link_to "#" do %>
+          <%= link_to commodity_exhibition_path(commodity.id) do %>
           <div class='item-img-content'>
             <%= image_tag commodity.image, class: "item-img" %>
 
