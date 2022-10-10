@@ -23,9 +23,7 @@ class CommodityExhibitionsController < ApplicationController
   end
 
   def edit
-    unless @commodity_exhibition.user_id == current_user.id
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless @commodity_exhibition.user_id == current_user.id
   end
 
   def update
