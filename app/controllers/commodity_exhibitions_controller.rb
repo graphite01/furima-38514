@@ -26,6 +26,8 @@ class CommodityExhibitionsController < ApplicationController
   end
 
   def update
+    commodity_exhibition = CommodityExhibition.find(params[:id])
+    commodity_exhibition.update(commodity_exhibition_params)
   end
 
   private
