@@ -146,7 +146,7 @@
               <%= commodity.item_name %>
             </h3>
             <div class='item-price'>
-              <span><%= commodity.selling_price %>円<br><%= commodity.delivery %></span>
+              <span><%= commodity.selling_price %>円<br><%= commodity.delivery_charge.name %></span>
               <div class='star-btn'>
                 <%= image_tag "star.png", class:"star-icon" %>
                 <span class='star-count'>0</span>
