@@ -18,6 +18,10 @@ class CommodityExhibitionsController < ApplicationController
     end
   end
 
+  def show
+    @commodity_exhibition = CommodityExhibition.find(params[:id])
+  end
+
   private
 
   def commodity_exhibition_params
