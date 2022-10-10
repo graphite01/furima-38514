@@ -1,5 +1,5 @@
 class CommodityExhibitionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :edit]
   before_action :set_commodity, only: [:show, :edit]
 
   def index
