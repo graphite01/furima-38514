@@ -27,4 +27,9 @@ class CommodityExhibition < ApplicationRecord
     belongs_to :prefecture
     belongs_to :days_to_ship
   end
+
+  def delivery
+    deliveryChargeName = DeliveryCharge.find(delivery_charge_id)[:name]
+  end
+
 end
