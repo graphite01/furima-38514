@@ -52,4 +52,5 @@ class Prefecture < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :commodity_exhibitions
+  has_many :product_purchases
 end
