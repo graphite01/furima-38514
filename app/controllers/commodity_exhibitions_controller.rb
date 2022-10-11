@@ -47,8 +47,10 @@ class CommodityExhibitionsController < ApplicationController
 
   def set_commodity
     @commodity_exhibition = CommodityExhibition.find(params[:id])
-    def user_only_commodity
-      redirect_to action: :index unless @commodity_exhibition.user_id == current_user.id
-    end
   end
+
+  def user_only_commodity
+    redirect_to action: :index unless @commodity_exhibition.user_id == current_user.id
+  end
+
 end
