@@ -1,6 +1,6 @@
 class CommodityExhibitionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_commodity, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_commodity, only: [:show, :edit, :update, :destroy]
 
   def index
     @commodity_exhibitions = CommodityExhibition.includes(:user).order('created_at DESC')
@@ -31,6 +31,12 @@ class CommodityExhibitionsController < ApplicationController
       redirect_to commodity_exhibition_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @commodity_exhibition.destroy
+      redirect_to root_path
     end
   end
 
