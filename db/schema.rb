@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_07_080011) do
+ActiveRecord::Schema.define(version: 2022_10_11_083600) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +48,28 @@ ActiveRecord::Schema.define(version: 2022_10_07_080011) do
     t.index ["user_id"], name: "index_commodity_exhibitions_on_user_id"
   end
 
+  create_table "product_purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "post_code", null: false
+    t.string "municipalities", null: false
+    t.string "address", null: false
+    t.string "building_name"
+    t.string "phone_number", null: false
+    t.bigint "purchase_history_id", null: false
+    t.integer "prefecture_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["purchase_history_id"], name: "index_product_purchases_on_purchase_history_id"
+  end
+
+  create_table "purchase_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "commodity_exhibition_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["commodity_exhibition_id"], name: "index_purchase_histories_on_commodity_exhibition_id"
+    t.index ["user_id"], name: "index_purchase_histories_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -68,4 +90,7 @@ ActiveRecord::Schema.define(version: 2022_10_07_080011) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "commodity_exhibitions", "users"
+  add_foreign_key "product_purchases", "purchase_histories"
+  add_foreign_key "purchase_histories", "commodity_exhibitions"
+  add_foreign_key "purchase_histories", "users"
 end

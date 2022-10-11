@@ -82,7 +82,7 @@ attr_accessor :token
 validaes :token, presence: true
 
 
-## purchase_history テーブル
+## purchase_historys テーブル
 | Column               | Type       | Options                        |
 | -------------------- | ---------- | ------------------------------ |
 | user                 | references | null: false, foreign_key: true |
