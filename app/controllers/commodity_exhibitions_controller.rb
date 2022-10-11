@@ -1,6 +1,7 @@
 class CommodityExhibitionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_commodity, only: [:show, :edit, :update, :destroy]
+  before_action :user_only_commodity, only: [:edit, :destroy]
 
   def index
     @commodity_exhibitions = CommodityExhibition.includes(:user).order('created_at DESC')
@@ -23,7 +24,6 @@ class CommodityExhibitionsController < ApplicationController
   end
 
   def edit
-    redirect_to action: :index unless @commodity_exhibition.user_id == current_user.id
   end
 
   def update
@@ -35,9 +35,7 @@ class CommodityExhibitionsController < ApplicationController
   end
 
   def destroy
-    if @commodity_exhibition.destroy
-      redirect_to root_path
-    end
+    redirect_to root_path if @commodity_exhibition.destroy
   end
 
   private
@@ -49,5 +47,8 @@ class CommodityExhibitionsController < ApplicationController
 
   def set_commodity
     @commodity_exhibition = CommodityExhibition.find(params[:id])
+    def user_only_commodity
+      redirect_to action: :index unless @commodity_exhibition.user_id == current_user.id
+    end
   end
 end
