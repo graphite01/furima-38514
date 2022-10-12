@@ -10,15 +10,10 @@ class ProductHistorys
     validates :token
   end
   
-  with_options presence: true, foreign_key: true do
-    validates :user_id
-    validates :commodity_exhibition_id
-  end
-
   validates :prefecture_id, numericality: {other_than: 1, message: "can't be blank"}
 
   def save
-    history = PurchaseHistory.create(user_id: user_id, commodity_exhibition_id: commodity_exhibition_id)
-    ProductPurchase.create(post_code: post_code, municipalities: municipalities, address: address, building_name: building_name, phone_number: phone_number, prefecture_id: prefecture_id,  purchase_history_id: purchase_history.id)
+    purchase_history = PurchaseHistory.create(user_id: user_id, commodity_exhibition_id: commodity_exhibition_id)
+    ProductPurchase.create(post_code: post_code, municipalities: municipalities, address: address, building_name: building_name, phone_number: phone_number, prefecture_id: prefecture_id, purchase_history_id: purchase_history.id)
   end
 end
