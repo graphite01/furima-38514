@@ -5,7 +5,6 @@ class PurchaseHistorysController < ApplicationController
   end
 
   def create
-    binding.pry
     @commodity_exhibition = CommodityExhibition.find(params[:commodity_exhibition_id])
     @product_history = ProductHistory.new(product_params)
     if @product_history.valid?
@@ -20,7 +19,7 @@ class PurchaseHistorysController < ApplicationController
   private
 
   def product_params
-    params.require(:product_history).permit(:post_code, :municipalities, :address, :building_name, :phone_number, :prefecture_id).merge(token: params[:token])
+    params.require(:product_history).permit(:post_code, :municipalities, :address, :building_name, :phone_number, :prefecture_id).merge(user_id: current_user.id, commodity_exhibition_id: params[:commodity_exhibition_id],token: params[:token])
   end
 
   def pay_item
