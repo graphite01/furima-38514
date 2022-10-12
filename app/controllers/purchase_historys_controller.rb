@@ -1,13 +1,15 @@
 class PurchaseHistorysController < ApplicationController
   def index
-    @product_history = ProductHistory.new
     @commodity_exhibition = CommodityExhibition.find(params[:commodity_exhibition_id])
+    @product_history = ProductHistory.new
   end
 
   def create
+    binding.pry
     @commodity_exhibition = CommodityExhibition.find(params[:commodity_exhibition_id])
-    @product_history = ProductHistorys.new(product_params)
+    @product_history = ProductHistory.new(product_params)
     if @product_history.valid?
+      pay_item
       @product_history.save
       redirect_to root_path
     else
@@ -18,6 +20,15 @@ class PurchaseHistorysController < ApplicationController
   private
 
   def product_params
-    params.require(:product_history).permit(:post_code, :municipalities, :address, :building_name, :phone_number, :prefecture_id)
+    params.require(:product_history).permit(:post_code, :municipalities, :address, :building_name, :phone_number, :prefecture_id).merge(token: params[:token])
+  end
+
+  def pay_item
+    Payjp.api_key = "sk_test_99c0c7cc9647ee4db3688bab"
+    Payjp::Charge.create(
+      amount: @commodity_exhibition.selling_price,
+      card: product_params[:token],
+      currency: 'jpy'
+    )
   end
 end
