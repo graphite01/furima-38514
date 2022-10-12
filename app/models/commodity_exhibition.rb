@@ -8,6 +8,7 @@ class CommodityExhibition < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_one :purchase_history
+  
 
   with_options presence: true do
     validates :item_name, length: { maximum: 40 }
