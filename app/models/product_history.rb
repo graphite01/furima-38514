@@ -1,4 +1,4 @@
-class ProductHistorys
+class ProductHistory
   include ActiveModel::Model
   attr_accessor :post_code, :municipalities, :address, :building_name, :phone_number, :purchase_history, :prefecture_id, :user_id, :commodity_exhibition_id, :token
 

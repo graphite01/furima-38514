@@ -1,6 +1,6 @@
 class PurchaseHistorysController < ApplicationController
   def index
-    @product_history = ProductHistorys.new
+    @product_history = ProductHistory.new
     @commodity_exhibition = CommodityExhibition.find(params[:commodity_exhibition_id])
   end
 
@@ -18,6 +18,6 @@ class PurchaseHistorysController < ApplicationController
   private
 
   def product_params
-    params.require(:product_historys).permit(:post_code, :municipalities, :address, :building_name, :phone_number, :prefecture_id)
+    params.require(:product_history).permit(:post_code, :municipalities, :address, :building_name, :phone_number, :prefecture_id)
   end
 end
