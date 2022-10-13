@@ -55,6 +55,16 @@ RSpec.describe ProductHistory, type: :model do
         @product_history.valid?
         expect(@product_history.errors.full_messages).to include('Phone number is invalid. Input only number')
       end
+      it '電話番号は9桁以下では購入できない' do
+        @product_history.phone_number = '12345678'
+        @product_history.valid?
+        expect(@product_history.errors.full_messages).to include('Phone number is invalid. Input only number')
+      end
+      it '電話番号は12桁以上では購入できない' do
+        @product_history.phone_number = '123456789012'
+        @product_history.valid?
+        expect(@product_history.errors.full_messages).to include('Phone number is invalid. Input only number')
+      end
       it 'トークンが空だと購入できない' do
         @product_history.token = ''
         @product_history.valid?
@@ -65,7 +75,7 @@ RSpec.describe ProductHistory, type: :model do
         @product_history.valid?
         expect(@product_history.errors.full_messages).to include("User can't be blank")
       end
-      it 'ユーザー情報がないと購入できない' do
+      it '商品情報がないと購入できない' do
         @product_history.commodity_exhibition_id = nil
         @product_history.valid?
         expect(@product_history.errors.full_messages).to include("Commodity exhibition can't be blank")

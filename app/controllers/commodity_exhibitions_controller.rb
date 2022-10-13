@@ -26,7 +26,7 @@ class CommodityExhibitionsController < ApplicationController
   end
 
   def edit
-    redirect_to root_path if current_user.id == @commodity_exhibition.user_id && !@commodity_exhibition.purchase_history.nil?
+    redirect_to root_path unless @commodity_exhibition.purchase_history.nil?
   end
 
   def update

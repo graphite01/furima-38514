@@ -3,12 +3,10 @@ class PurchaseHistorysController < ApplicationController
   before_action :sold_out_check, only: [:index, :create]
 
   def index
-    @commodity_exhibition = CommodityExhibition.find(params[:commodity_exhibition_id])
     @product_history = ProductHistory.new
   end
 
   def create
-    @commodity_exhibition = CommodityExhibition.find(params[:commodity_exhibition_id])
     @product_history = ProductHistory.new(product_params)
     if @product_history.valid?
       pay_item
