@@ -21,8 +21,6 @@ class CommodityExhibitionsController < ApplicationController
   end
 
   def show
-    @product_history = ProductHistory.new
-    @product_historys = @commodity_exhibition.purchase_history
   end
 
   def edit
