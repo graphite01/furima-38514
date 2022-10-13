@@ -22,11 +22,13 @@ class PurchaseHistorysController < ApplicationController
   private
 
   def product_params
-    params.require(:product_history).permit(:post_code, :municipalities, :address, :building_name, :phone_number, :prefecture_id).merge(user_id: current_user.id, commodity_exhibition_id: params[:commodity_exhibition_id],token: params[:token])
+    params.require(:product_history).permit(:post_code, :municipalities, :address, :building_name, :phone_number, :prefecture_id).merge(
+      user_id: current_user.id, commodity_exhibition_id: params[:commodity_exhibition_id], token: params[:token]
+    )
   end
 
   def pay_item
-    Payjp.api_key = "sk_test_99c0c7cc9647ee4db3688bab"
+    Payjp.api_key = 'sk_test_99c0c7cc9647ee4db3688bab'
     Payjp::Charge.create(
       amount: @commodity_exhibition.selling_price,
       card: product_params[:token],
@@ -38,7 +40,7 @@ class PurchaseHistorysController < ApplicationController
     @commodity_exhibition = CommodityExhibition.find(params[:commodity_exhibition_id])
     if current_user.id == @commodity_exhibition.user_id
       redirect_to root_path
-    elsif @commodity_exhibition.purchase_history != nil
+    elsif !@commodity_exhibition.purchase_history.nil?
       redirect_to root_path
     end
   end

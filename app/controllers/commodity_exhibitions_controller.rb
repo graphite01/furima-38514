@@ -26,10 +26,7 @@ class CommodityExhibitionsController < ApplicationController
   end
 
   def edit
-    if @commodity_exhibition.user_id == current_user.id && @commodity_exhibition.purchase_history == nil
-    else
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user.id == @commodity_exhibition.user_id && !@commodity_exhibition.purchase_history.nil?
   end
 
   def update
@@ -58,5 +55,4 @@ class CommodityExhibitionsController < ApplicationController
   def user_only_commodity
     redirect_to action: :index unless @commodity_exhibition.user_id == current_user.id
   end
-
 end
