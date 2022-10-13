@@ -22,8 +22,7 @@ RSpec.describe ProductHistory, type: :model do
       it '郵便番号が空では購入できない' do
         @product_history.post_code = ''
         @product_history.valid?
-        expect(@product_history.errors.full_messages).to include("Post code can't be blank",
-                                                                 'Post code is invalid. Enter it as follows (e.g. 123-4567)')
+        expect(@product_history.errors.full_messages).to include("Post code can't be blank")
       end
       it '郵便番号はハイフンがなければ購入できない' do
         @product_history.post_code = '1234567'
