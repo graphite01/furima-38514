@@ -28,7 +28,7 @@ class PurchaseHistorysController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = 'sk_test_99c0c7cc9647ee4db3688bab'
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
       amount: @commodity_exhibition.selling_price,
       card: product_params[:token],
