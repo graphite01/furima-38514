@@ -1,4 +1,7 @@
 class PurchaseHistorysController < ApplicationController
+  before_action :authenticate_user!
+  before_action :sold_out_check, only: [:index, :create]
+
   def index
     @commodity_exhibition = CommodityExhibition.find(params[:commodity_exhibition_id])
     @product_history = ProductHistory.new
@@ -29,5 +32,14 @@ class PurchaseHistorysController < ApplicationController
       card: product_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def sold_out_check
+    @commodity_exhibition = CommodityExhibition.find(params[:commodity_exhibition_id])
+    if current_user.id == @commodity_exhibition.user_id
+      redirect_to root_path
+    elsif @commodity_exhibition.purchase_history != nil
+      redirect_to root_path
+    end
   end
 end

@@ -26,6 +26,10 @@ class CommodityExhibitionsController < ApplicationController
   end
 
   def edit
+    if @commodity_exhibition.user_id == current_user.id && @commodity_exhibition.purchase_history == nil
+    else
+      redirect_to root_path
+    end
   end
 
   def update
