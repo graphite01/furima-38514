@@ -79,10 +79,10 @@
 
 ### クレジットカード情報はPAY.JPで管理,tokenを使用、モデル内(DBでは無い)に下記を入力
 attr_accessor :token
-validaes :token, presence: true
+validates :token, presence: true
 
 
-## purchase_history テーブル
+## purchase_historys テーブル
 | Column               | Type       | Options                        |
 | -------------------- | ---------- | ------------------------------ |
 | user                 | references | null: false, foreign_key: true |
